@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Folder" representedClassName="Folder" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="icon" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="myQuote" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Quote" inverseName="parentFolder" inverseEntity="Quote"/>
+    </entity>
+    <entity name="Person" representedClassName="Person" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="quotes" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Quote" inverseName="author" inverseEntity="Quote"/>
+    </entity>
+    <entity name="Quote" representedClassName="Quote" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isFavorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Person" inverseName="quotes" inverseEntity="Person"/>
+        <relationship name="parentFolder" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="myQuote" inverseEntity="Folder"/>
+        <relationship name="tag" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="quotes" inverseEntity="Tag"/>
+    </entity>
+    <entity name="Tag" representedClassName="Tag" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="quotes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Quote" inverseName="tag" inverseEntity="Quote"/>
+    </entity>
+    <elements>
+        <element name="Folder" positionX="-12520.5546875" positionY="-3890.96484375" width="128" height="118"/>
+        <element name="Person" positionX="-12473.89453125" positionY="-4098.359375" width="128" height="88"/>
+        <element name="Quote" positionX="-11990.60546875" positionY="-4095.70703125" width="128" height="148"/>
+        <element name="Tag" positionX="-11810.44921875" positionY="-3806.6015625" width="128" height="103"/>
+    </elements>
+</model>
