@@ -24,3 +24,6 @@ Carmine Porricelli <br />
 Martina Esposito <br />
 Valerio Domenico Conte <br />
 Riccardo Francesco Ruocco 
+
+The team has been working on another repo, to view the commit history follow the link below: <br />
+https://github.com/Carminepo2/AirQuotes-2
