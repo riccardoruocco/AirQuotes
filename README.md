@@ -27,5 +27,5 @@ Riccardo Francesco Ruocco
 <br />
 <br />
 <br />
-The team has been working on another repo, to view the commit history follow the link below: <br />
+The team worked on another repo, to check the commit history follow this link: <br />
 https://github.com/Carminepo2/AirQuotes-2
