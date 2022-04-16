@@ -13,8 +13,9 @@ The application facilitates the fruition and retrieval of quotes thanks to attra
 ![FrameWork1](https://badgen.net/badge/FrameworkUsed/SwiftUI/red/?icon=apple)
 ![FrameWork2](https://badgen.net/badge/FrameworkUsed/CoreData/red/?icon=apple)
 
-
-
+<br />
+Live demo:<br />
+https://www.youtube.com/watch?v=7K408zz9uLc&t=14s
 
 <br />
 <br />
@@ -24,3 +25,8 @@ Carmine Porricelli <br />
 Martina Esposito <br />
 Valerio Domenico Conte <br />
 Riccardo Francesco Ruocco 
+<br />
+<br />
+<br />
+The team worked on another repo, to check the commit history follow this link: <br />
+https://github.com/Carminepo2/AirQuotes-2
