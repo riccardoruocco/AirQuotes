@@ -224,6 +224,15 @@ struct ModelAirQuotes{
     func getQuotes()->Array<Quote>{
         return self.quote
     }
+    func getQuoteById(id:UUID)->Quote{
+        var quoteToReturn:Quote? = nil
+        for aQuote in quote{
+            if(aQuote.id == id){
+                quoteToReturn = aQuote
+            }
+        }
+        return quoteToReturn!
+    }
     
 }
 extension Quote{
@@ -232,7 +241,7 @@ extension Quote{
         self.text = text
         self.author = author
         self.parentFolder = parentFolder
-        self.tag = NSSet(array: tagList)
+        self.tag = NSOrderedSet(array: tagList)
     }
 }
 

@@ -44,7 +44,7 @@ struct QuoteView: View {
                 
                 if quote.tag?.count ?? 0 > 0 {
                     
-                    TagCloudView(tags: Array(quote.tag! as! Set<Tag>))
+                    TagCloudView(tags: Array(_immutableCocoaArray: quote.tag!))
                         .padding(.horizontal)
                         .padding(.top)
                     
@@ -140,7 +140,7 @@ struct TagCloudView: View {
                             height -= d.height
                         }
                         let result = width
-                        if tag == self.tags.last! {
+                        if let lastTag = self.tags.last, tag == lastTag {
                             width = 0 //last item
                         } else {
                             width -= d.width
@@ -149,7 +149,7 @@ struct TagCloudView: View {
                     })
                     .alignmentGuide(.top, computeValue: {d in
                         let result = height
-                        if tag == self.tags.last! {
+                        if let lastTag2 = self.tags.last, tag == lastTag2 {
                             height = 0 // last item
                         }
                         return result
